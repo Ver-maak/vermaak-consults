@@ -33,6 +33,23 @@ function ServicesPage() {
         intro="Five connected practice areas that take organisations from diagnosis and strategy through to build, delivery and measurement."
       />
 
+      <div className="sticky top-18 z-30 border-b border-border bg-background/85 backdrop-blur-xl">
+        <div className="shell flex gap-2 overflow-x-auto py-3">
+          {servicePillars.map((pillar) => (
+            <a
+              key={pillar.slug}
+              href={`#${pillar.slug}`}
+              className="shrink-0 rounded-full border border-border px-4 py-2 text-xs font-medium whitespace-nowrap text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <span className="mr-2 font-display font-extrabold text-primary">
+                {pillar.number}
+              </span>
+              {pillar.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="shell divide-y divide-border">
         {servicePillars.map((pillar) => (
           <section
