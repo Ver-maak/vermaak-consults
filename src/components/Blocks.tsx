@@ -59,9 +59,11 @@ export function ButtonLink({
   children,
   variant = "primary",
 }: {
-  to?: "/" | "/about" | "/services" | "/sectors" | "/insights" | "/contact";
-  hash?: string;
-  href?: string;
+  to?: "/" | undefined;
+  _unused?: never;
+  __to?: | "/about" | "/services" | "/sectors" | "/insights" | "/contact";
+  hash?: string | undefined;
+  href?: string | undefined;
   children: ReactNode;
   variant?: "primary" | "ghost";
 }) {
@@ -88,7 +90,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link to={to ?? "/contact"} hash={hash} className={className}>
+    <Link to={to ?? "/contact"} {...(hash ? { hash } : {})} className={className}>
       {inner}
     </Link>
   );
