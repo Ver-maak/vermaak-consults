@@ -31,7 +31,7 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 border-b border-transparent transition-colors duration-300",
-        scrolled && "border-border bg-background/85 backdrop-blur-xl",
+        scrolled && "border-primary/20 bg-background/88 shadow-lg shadow-background/30 backdrop-blur-xl",
       )}
     >
       <ScrollProgress />
@@ -67,7 +67,7 @@ export function Navbar() {
           ))}
           <Link
             to="/contact"
-            className="ml-3 inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+            className="ml-3 inline-flex items-center rounded-full bg-[image:var(--gradient-accent)] px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/15 transition-transform hover:scale-[1.03]"
           >
             Let's Talk
           </Link>
@@ -99,7 +99,7 @@ export function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-[image:var(--gradient-accent)] px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
               Let's Talk
             </Link>

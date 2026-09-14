@@ -14,7 +14,7 @@ export function PageHeader({
   intro?: string;
 }) {
   return (
-    <section className="border-b border-border">
+    <section className="page-header border-b border-border">
       <div className="shell py-20 md:py-28">
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
@@ -75,7 +75,7 @@ export function ButtonLink({
   const className = cn(
     "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all",
     variant === "primary"
-      ? "bg-primary text-primary-foreground hover:scale-[1.03]"
+      ? "bg-[image:var(--gradient-accent)] text-primary-foreground shadow-[0_10px_30px_-14px_color-mix(in_oklab,var(--primary)_70%,transparent)] hover:scale-[1.03]"
       : "border border-border text-foreground hover:border-primary hover:text-primary",
   );
 
@@ -116,7 +116,7 @@ export function CTASection({
 }) {
   return (
     <section className="shell py-20 md:py-28">
-      <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-surface px-6 py-14 sm:px-12 md:py-20">
+      <Reveal className="relative overflow-hidden rounded-3xl border border-primary/25 bg-[image:var(--gradient-surface)] px-6 py-14 shadow-[var(--shadow-elevated)] sm:px-12 md:py-20">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-primary/20 blur-3xl"

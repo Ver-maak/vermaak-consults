@@ -110,7 +110,7 @@ function HomePage() {
         </Reveal>
       </section>
 
-      <section className="border-y border-border bg-surface/40">
+      <section className="lively-band border-y border-primary/20">
         <div className="shell py-20 md:py-28">
           <SectionHeading
             eyebrow="Why us"
@@ -145,7 +145,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface/40">
+      <section className="border-y border-primary/20 bg-surface-cyan/55">
         <div className="shell py-20 md:py-28">
           <SectionHeading eyebrow="In their words" title="What partners say." />
           <div className="mt-12">
@@ -177,7 +177,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface/40">
+      <section className="lively-band border-t border-primary/20">
         <div className="shell grid gap-12 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading
             eyebrow="FAQs"
