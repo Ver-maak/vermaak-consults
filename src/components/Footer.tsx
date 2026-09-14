@@ -20,7 +20,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-primary/20 bg-[linear-gradient(135deg,var(--surface-blue),var(--background)_58%)]">
       <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <img

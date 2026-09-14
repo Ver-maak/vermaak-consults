@@ -81,7 +81,7 @@ function SectorsPage() {
         )}
       </section>
 
-      <section className="border-y border-border bg-surface/40">
+      <section className="lively-band border-y border-primary/20">
         <div className="shell py-20 md:py-28">
           <SectionHeading
             eyebrow="Our approach"

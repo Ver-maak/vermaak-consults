@@ -57,7 +57,7 @@ function AboutPage() {
       />
 
       <section className="shell grid gap-12 py-20 md:py-24 lg:grid-cols-2">
-        <Reveal className="rounded-3xl border border-border bg-surface p-8 md:p-10">
+        <Reveal className="rounded-3xl border border-primary/25 bg-[image:var(--gradient-surface)] p-8 shadow-[var(--shadow-elevated)] md:p-10">
           <p className="eyebrow">Our Mission</p>
           <p className="mt-5 text-xl font-semibold text-balance sm:text-2xl">
             To enable organisations and people to turn ideas, creativity and technology
@@ -66,7 +66,7 @@ function AboutPage() {
         </Reveal>
         <Reveal
           delay={100}
-          className="rounded-3xl border border-border bg-surface p-8 md:p-10"
+          className="rounded-3xl border border-primary/25 bg-surface-blue p-8 shadow-[var(--shadow-elevated)] md:p-10"
         >
           <p className="eyebrow">Our Vision</p>
           <p className="mt-5 text-xl font-semibold text-balance sm:text-2xl">
@@ -75,7 +75,7 @@ function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="border-y border-border bg-surface/40">
+      <section className="lively-band border-y border-primary/20">
         <div className="shell py-20 md:py-28">
           <SectionHeading eyebrow="Our values" title="What guides our work." />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
