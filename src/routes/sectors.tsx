@@ -27,6 +27,11 @@ export const Route = createFileRoute("/sectors")({
 });
 
 function SectorsPage() {
+  const [query, setQuery] = useState("");
+  const filtered = sectors.filter((sector) =>
+    `${sector.title} ${sector.body}`.toLowerCase().includes(query.trim().toLowerCase()),
+  );
+
   return (
     <>
       <PageHeader
@@ -36,19 +41,44 @@ function SectorsPage() {
       />
 
       <section className="shell py-20 md:py-24">
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sectors.map((sector, index) => (
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <label className="relative w-full sm:max-w-sm">
+            <span className="sr-only">Filter sectors</span>
+            <Search className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Filter sectors — e.g. youth, energy, data"
+              className="w-full rounded-full border border-border bg-surface py-2.5 pr-4 pl-11 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
+            />
+          </label>
+          <p className="text-xs tracking-wide text-muted-foreground uppercase">
+            {filtered.length} of {sectors.length} sectors
+          </p>
+        </div>
+
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((sector, index) => (
             <Reveal as="li" key={sector.title} delay={(index % 3) * 70}>
-              <div className="card-surface h-full p-7">
+              <div className="card-surface group h-full p-7">
                 <span className="font-display text-xs font-extrabold tracking-[0.22em] text-primary">
-                  {String(index + 1).padStart(2, "0")}
+                  {String(sectors.indexOf(sector) + 1).padStart(2, "0")}
                 </span>
-                <h2 className="mt-4 text-lg font-bold">{sector.title}</h2>
+                <h2 className="mt-4 text-lg font-bold transition-colors group-hover:text-primary">
+                  {sector.title}
+                </h2>
                 <p className="mt-3 text-sm text-muted-foreground">{sector.body}</p>
               </div>
             </Reveal>
           ))}
         </ul>
+
+        {filtered.length === 0 && (
+          <p className="mt-10 rounded-2xl border border-border bg-surface px-6 py-10 text-center text-sm text-muted-foreground">
+            Nothing matches that term — try a broader keyword, or tell us about your
+            sector directly.
+          </p>
+        )}
       </section>
 
       <section className="border-y border-border bg-surface/40">
@@ -58,25 +88,9 @@ function SectorsPage() {
             title="How we work in every sector."
             body="The same disciplined process, adapted to the context of each institution, enterprise or programme."
           />
-          <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {approachSteps.map((step, index) => (
-              <Reveal as="li" key={step.number} delay={index * 80} className="relative">
-                <div className="h-full rounded-2xl border border-border bg-surface p-7">
-                  <span className="font-display text-sm font-extrabold tracking-[0.2em] text-primary">
-                    {step.number}
-                  </span>
-                  <h3 className="mt-4 text-lg font-bold">{step.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{step.body}</p>
-                </div>
-                {index < approachSteps.length - 1 && (
-                  <span
-                    aria-hidden
-                    className="absolute top-1/2 -right-3 hidden h-px w-6 bg-primary/50 lg:block"
-                  />
-                )}
-              </Reveal>
-            ))}
-          </ol>
+          <div className="mt-14">
+            <ApproachTimeline />
+          </div>
         </div>
       </section>
 
