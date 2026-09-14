@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays, Search } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CTASection, PageHeader } from "@/components/Blocks";
 import { insightCategories, insights } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -111,6 +113,12 @@ function InsightsPage() {
             </Reveal>
           ))}
         </div>
+
+        {filtered.length === 0 && (
+          <p className="mt-10 rounded-2xl border border-border bg-surface px-6 py-10 text-center text-sm text-muted-foreground">
+            No articles match that filter yet. Try another category or clear your search.
+          </p>
+        )}
       </section>
 
       <CTASection
