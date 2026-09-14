@@ -59,9 +59,14 @@ export function ButtonLink({
   children,
   variant = "primary",
 }: {
-  to?: "/" | undefined;
-  _unused?: never;
-  __to?: | "/about" | "/services" | "/sectors" | "/insights" | "/contact";
+  to?:
+    | "/"
+    | "/about"
+    | "/services"
+    | "/sectors"
+    | "/insights"
+    | "/contact"
+    | undefined;
   hash?: string | undefined;
   href?: string | undefined;
   children: ReactNode;
