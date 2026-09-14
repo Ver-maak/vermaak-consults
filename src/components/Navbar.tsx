@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/vermaak-logo.png.asset.json";
 
 const links = [
   { to: "/about", label: "About" },
@@ -34,9 +35,13 @@ export function Navbar() {
     >
       <nav className="shell grid h-18 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:flex lg:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Vermaak Consults home">
-          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary font-display text-base font-extrabold text-primary-foreground">
-            V
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Vermaak logo"
+            width={40}
+            height={40}
+            className="size-10 shrink-0 object-contain"
+          />
           <span className="min-w-0 leading-tight">
             <span className="block truncate font-display text-sm font-extrabold tracking-[0.16em] uppercase">
               Vermaak
