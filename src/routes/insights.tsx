@@ -24,6 +24,16 @@ export const Route = createFileRoute("/insights")({
 });
 
 function InsightsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [query, setQuery] = useState("");
+
+  const filtered = insights.filter((article) => {
+    const matchesCategory =
+      activeCategory === "All" || article.category === activeCategory;
+    const text = `${article.title} ${article.excerpt} ${article.category}`.toLowerCase();
+    return matchesCategory && text.includes(query.trim().toLowerCase());
+  });
+
   return (
     <>
       <PageHeader
@@ -33,18 +43,48 @@ function InsightsPage() {
       />
 
       <section className="shell py-16 md:py-20">
-        <ul className="flex flex-wrap gap-2" aria-label="Insight categories">
-          {insightCategories.map((category) => (
-            <li key={category}>
-              <span className="inline-flex rounded-full border border-border px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary">
-                {category}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <ul className="flex flex-wrap gap-2" aria-label="Insight categories">
+            {["All", ...insightCategories].map((category) => {
+              const selected = category === activeCategory;
+              return (
+                <li key={category}>
+                  <button
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => setActiveCategory(category)}
+                    className={cn(
+                      "inline-flex rounded-full border px-4 py-2 text-xs font-medium transition-colors",
+                      selected
+                        ? "border-primary bg-primary/12 text-primary"
+                        : "border-border text-muted-foreground hover:border-primary hover:text-primary",
+                    )}
+                  >
+                    {category}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {insights.map((article, index) => (
+          <label className="relative w-full lg:max-w-xs">
+            <span className="sr-only">Search insights</span>
+            <Search className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search insights"
+              className="w-full rounded-full border border-border bg-surface py-2.5 pr-4 pl-11 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary"
+            />
+          </label>
+        </div>
+
+        <p className="mt-6 text-xs tracking-wide text-muted-foreground uppercase">
+          Showing {filtered.length} of {insights.length} articles
+        </p>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((article, index) => (
             <Reveal as="article" key={article.slug} delay={index * 80}>
               <div className="card-surface flex h-full flex-col p-7">
                 <span className="w-fit rounded-full bg-primary/12 px-3 py-1 text-[0.7rem] font-semibold tracking-wide text-primary uppercase">
