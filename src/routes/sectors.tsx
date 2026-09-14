@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Search } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CTASection, PageHeader, SectionHeading } from "@/components/Blocks";
-import { approachSteps, sectors } from "@/lib/site-data";
+import { ApproachTimeline } from "@/components/ApproachTimeline";
+import { sectors } from "@/lib/site-data";
 
 export const Route = createFileRoute("/sectors")({
   head: () => ({
