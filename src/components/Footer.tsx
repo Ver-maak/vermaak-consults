@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, MapPin } from "lucide-react";
 import { servicePillars } from "@/lib/site-data";
+import logoAsset from "@/assets/vermaak-logo.png.asset.json";
 
 const nav = [
   { to: "/about", label: "About" },
@@ -22,6 +23,14 @@ export function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
+          <img
+            src={logoAsset.url}
+            alt="Vermaak logo"
+            width={48}
+            height={48}
+            loading="lazy"
+            className="mb-4 size-12 object-contain"
+          />
           <p className="font-display text-lg font-extrabold tracking-[0.16em] uppercase">
             Vermaak Consults
           </p>
