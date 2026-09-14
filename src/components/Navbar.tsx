@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import logoAsset from "@/assets/vermaak-logo.png.asset.json";
 
 const links = [
@@ -33,6 +34,7 @@ export function Navbar() {
         scrolled && "border-border bg-background/85 backdrop-blur-xl",
       )}
     >
+      <ScrollProgress />
       <nav className="shell grid h-18 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:flex lg:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Vermaak Consults home">
           <img

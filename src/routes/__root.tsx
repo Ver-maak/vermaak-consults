@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -134,6 +135,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <BackToTop />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );

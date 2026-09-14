@@ -271,3 +271,82 @@ export const serviceOptions = [
   "Workforce & Skills",
   "Other",
 ];
+
+export const marqueeWords = [
+  "Strategy",
+  "Technology",
+  "Creativity",
+  "Impact",
+  "Research",
+  "Enterprise",
+  "Skills",
+  "Innovation",
+];
+
+export const impactStats = [
+  { value: 5, suffix: "", label: "Practice areas" },
+  { value: 11, suffix: "", label: "Sectors served" },
+  { value: 40, suffix: "+", label: "Service offerings" },
+  { value: 4, suffix: "", label: "Ecosystem arms" },
+];
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "They did not hand us a strategy document and disappear. Vermaak stayed through the build, trained our team and left us with dashboards we actually use every week.",
+    name: "Programme Director",
+    role: "Regional development programme, East Africa",
+  },
+  {
+    quote:
+      "The diagnostic was sharp and honest. Within a quarter we had a clearer business model, an investor-ready pack and a pipeline we could defend.",
+    name: "Founder & CEO",
+    role: "Agri-tech SME, Uganda",
+  },
+  {
+    quote:
+      "Their creative economy work reframed how we fund creators — from grants for projects to support for businesses. That shift changed our results.",
+    name: "Head of Partnerships",
+    role: "Cultural fund, Africa",
+  },
+  {
+    quote:
+      "Digital skills training that led to real work, not certificates. The employability outcomes spoke for themselves at endline.",
+    name: "Skills Lead",
+    role: "Youth employment initiative",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What kinds of organisations do you work with?",
+    answer:
+      "Governments and public institutions, development organisations and NGOs, private-sector companies, SMEs and startups, creative enterprises, and youth and women's programmes. If the challenge sits where technology, enterprise, creativity and capability meet, it is our territory.",
+  },
+  {
+    question: "Do you only advise, or do you also implement?",
+    answer:
+      "Both. Many engagements start with research, diagnostics or strategy and continue into build and delivery — digital products, dashboards, training programmes and MEL systems. We are accountable to what gets used, not just what gets written.",
+  },
+  {
+    question: "Can we engage you for a single piece of work?",
+    answer:
+      "Yes. Engagements range from a focused study or a single digital product to multi-year programme partnerships covering design, delivery, measurement and learning.",
+  },
+  {
+    question: "Where do you work?",
+    answer:
+      "We are based in Kampala, Uganda and work across Africa — remotely and in-country, on our own or alongside partner teams and local consultants.",
+  },
+  {
+    question: "How do engagements usually start?",
+    answer:
+      "With a conversation. Tell us the challenge and we will come back with a proposed approach, the mix of skills required, indicative timelines and a clear scope before any commitment.",
+  },
+];
