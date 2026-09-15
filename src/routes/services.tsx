@@ -17,7 +17,7 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Five practice areas covering digital, enterprise, creative economy, research and workforce development.",
+          "Six practice areas covering digital, enterprise, creative economy, knowledge, workforce development, gender and inclusion.",
       },
     ],
   }),
@@ -30,7 +30,7 @@ function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Practical consulting, delivered end to end."
-        intro="Five connected practice areas that take organisations from diagnosis and strategy through to build, delivery and measurement."
+        intro="Six connected practice areas that take organisations from diagnosis and strategy through to build, delivery, inclusion and measurement."
       />
 
       <div className="sticky top-18 z-30 border-b border-border bg-background/85 backdrop-blur-xl">

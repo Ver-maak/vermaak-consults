@@ -84,7 +84,12 @@ export const servicePillars: ServicePillar[] = [
       "Outcome harvesting",
       "Case studies",
       "Learning briefs",
-      "Knowledge-management systems",
+      "Knowledge management strategies",
+      "Knowledge audits and needs assessments",
+      "Knowledge-management systems and repositories",
+      "Communities of practice and learning networks",
+      "Knowledge capture and documentation",
+      "Knowledge products and dissemination",
     ],
     cta: "Generate Better Insights",
   },
@@ -107,6 +112,26 @@ export const servicePillars: ServicePillar[] = [
       "Capacity-building programmes",
     ],
     cta: "Build Future-Ready Talent",
+  },
+  {
+    slug: "gender-inclusion",
+    number: "06",
+    title: "Gender & Inclusion",
+    short:
+      "Gender-responsive programme design, inclusion strategies, assessments and institutional capacity building.",
+    items: [
+      "Gender analysis and assessments",
+      "Gender equality and social inclusion strategies",
+      "Gender-responsive programme design",
+      "Gender mainstreaming",
+      "Gender action plans",
+      "Gender-sensitive indicators and MEL frameworks",
+      "Safeguarding and inclusion reviews",
+      "Women's economic empowerment programmes",
+      "Gender audits",
+      "Institutional gender capacity building",
+    ],
+    cta: "Design a More Inclusive Programme",
   },
 ];
 
@@ -269,6 +294,7 @@ export const serviceOptions = [
   "Creative Economy",
   "Research, MEL & Knowledge",
   "Workforce & Skills",
+  "Gender & Inclusion",
   "Other",
 ];
 
@@ -284,9 +310,9 @@ export const marqueeWords = [
 ];
 
 export const impactStats = [
-  { value: 5, suffix: "", label: "Practice areas" },
+  { value: 6, suffix: "", label: "Practice areas" },
   { value: 11, suffix: "", label: "Sectors served" },
-  { value: 40, suffix: "+", label: "Service offerings" },
+  { value: 50, suffix: "+", label: "Service offerings" },
   { value: 4, suffix: "", label: "Ecosystem arms" },
 ];
 
