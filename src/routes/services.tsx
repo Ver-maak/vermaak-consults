@@ -17,7 +17,7 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Five practice areas covering digital, enterprise, creative economy, research and workforce development.",
+          "Six practice areas covering digital, enterprise, creative economy, knowledge, workforce development, gender and inclusion.",
       },
     ],
   }),

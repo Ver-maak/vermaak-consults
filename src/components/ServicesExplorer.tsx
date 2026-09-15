@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils";
 
 export function ServicesExplorer() {
   const [active, setActive] = useState(0);
-  const pillar = servicePillars[active]!;
+  const pillar = servicePillars[active] ?? servicePillars[0];
+
+  if (!pillar) return null;
 
   return (
     <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">

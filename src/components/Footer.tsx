@@ -76,7 +76,7 @@ export function Footer() {
                 <Link
                   to="/services"
                   hash={s.slug}
-                   className="transition-colors hover:text-nav-foreground"
+                  className="transition-colors hover:text-nav-foreground"
                 >
                   {s.title}
                 </Link>
@@ -96,7 +96,7 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
-               <a href="mailto:info@vermaak.africa" className="hover:text-nav-foreground">
+              <a href="mailto:info@vermaak.africa" className="hover:text-nav-foreground">
                 info@vermaak.africa
               </a>
             </li>
@@ -106,7 +106,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-         <div className="shell flex flex-col gap-2 py-6 text-xs text-nav-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="shell flex flex-col gap-2 py-6 text-xs text-nav-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Vermaak. All rights reserved.</p>
           <p>Kampala, Uganda | Working across Africa</p>
         </div>
