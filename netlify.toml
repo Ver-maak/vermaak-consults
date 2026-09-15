@@ -1,0 +1,13 @@
+# Netlify deployment configuration for Vermaak Consults.
+# The TanStack Start app builds through Nitro; the "netlify" preset
+# (set in vite.config.ts) emits static assets to .output/public and a
+# serverless SSR function to .netlify/functions-internal, plus a
+# catch-all _redirects rule so client-side routes resolve on refresh.
+
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+  functions = ".netlify/functions-internal"
+
+[build.environment]
+  NODE_VERSION = "22"
