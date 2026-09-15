@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox (e.g. a Netlify build) this preset takes effect:
+  // Nitro emits static assets to .output/public and the SSR handler as a Netlify
+  // Function, matching netlify.toml. Inside Lovable, hosting overrides this with
+  // its own preset, so previews and publish are unaffected.
+  nitro: { preset: "netlify" },
 });
