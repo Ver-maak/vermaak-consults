@@ -30,8 +30,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-transparent transition-colors duration-300",
-        scrolled && "border-primary/20 bg-background/88 shadow-lg shadow-background/30 backdrop-blur-xl",
+        "sticky top-0 z-50 border-b border-transparent bg-nav text-nav-foreground transition-colors duration-300",
+        scrolled && "border-primary/25 shadow-lg shadow-nav/30 backdrop-blur-xl",
       )}
     >
       <ScrollProgress />
@@ -48,7 +48,7 @@ export function Navbar() {
             <span className="block truncate font-display text-sm font-extrabold tracking-[0.16em] uppercase">
               Vermaak
             </span>
-            <span className="block truncate text-[0.68rem] tracking-[0.22em] text-muted-foreground uppercase">
+            <span className="block truncate text-[0.68rem] tracking-[0.22em] text-nav-muted uppercase">
               Consults
             </span>
           </span>
@@ -59,8 +59,8 @@ export function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
+              className="rounded-full px-4 py-2 text-sm font-medium text-nav-muted transition-colors hover:bg-primary/15 hover:text-nav-foreground"
+              activeProps={{ className: "text-nav-foreground" }}
             >
               {l.label}
             </Link>
@@ -78,21 +78,21 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          className="grid size-10 shrink-0 place-items-center rounded-lg border border-border text-foreground lg:hidden"
+          className="grid size-10 shrink-0 place-items-center rounded-lg border border-primary/25 text-nav-foreground lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-primary/20 bg-nav lg:hidden">
           <div className="shell flex flex-col gap-1 py-4">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="rounded-lg px-3 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                activeProps={{ className: "text-foreground" }}
+                className="rounded-lg px-3 py-3 text-base font-medium text-nav-muted transition-colors hover:bg-primary/15 hover:text-nav-foreground"
+                activeProps={{ className: "text-nav-foreground" }}
               >
                 {l.label}
               </Link>
