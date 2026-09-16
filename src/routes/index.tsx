@@ -36,11 +36,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-40 -left-32 size-[28rem] rounded-full bg-primary/15 blur-3xl"
-        />
+      <section className="hero-grid relative overflow-hidden border-b border-border bg-[image:var(--gradient-hero)]">
         <div className="shell grid gap-14 py-20 md:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <Reveal>
             <p className="eyebrow">Vermaak Consults</p>
@@ -77,16 +73,16 @@ function HomePage() {
           </Reveal>
 
           <Reveal delay={120} className="relative">
-            <div className="overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-elevated)]">
+            <div className="group overflow-hidden rounded-lg border border-border bg-surface p-2 shadow-[var(--shadow-elevated)]">
               <img
                 src={heroImage}
                 alt="African technology and business teams collaborating in a modern innovation hub"
                 width={1280}
                 height={1024}
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.04]"
+                className="aspect-[5/4] h-full w-full rounded-md object-cover transition-transform duration-700 group-hover:scale-[1.035]"
               />
             </div>
-            <div className="absolute -bottom-6 left-4 hidden rounded-2xl border border-border bg-surface px-5 py-4 shadow-[var(--shadow-elevated)] sm:block">
+            <div className="absolute -bottom-6 left-4 hidden rounded-lg border border-border bg-surface px-5 py-4 shadow-[var(--shadow-elevated)] sm:block">
               <p className="text-xs tracking-[0.18em] text-primary uppercase">
                 Strategy · Technology
               </p>

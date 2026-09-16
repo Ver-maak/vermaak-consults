@@ -20,7 +20,9 @@ export function Testimonials() {
     return () => clearInterval(id);
   }, [paused]);
 
-  const active = testimonials[index]!;
+  const active = testimonials[index] ?? testimonials[0];
+
+  if (!active) return null;
 
   return (
     <Reveal
@@ -28,16 +30,12 @@ export function Testimonials() {
       // pause rotation while the visitor is reading or interacting
     >
       <div
-        className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-12"
+        className="relative overflow-hidden rounded-lg border border-border bg-surface p-8 shadow-[var(--shadow-elevated)] sm:p-12"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
         onBlurCapture={() => setPaused(false)}
       >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-24 -left-20 size-72 rounded-full bg-primary/15 blur-3xl"
-        />
         <Quote className="relative size-9 text-primary" />
         <blockquote
           key={index}

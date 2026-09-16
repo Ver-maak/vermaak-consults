@@ -23,16 +23,16 @@ export function ServicesExplorer() {
                 onMouseEnter={() => setActive(index)}
                 aria-pressed={selected}
                 className={cn(
-                  "flex w-full items-center gap-4 rounded-2xl border px-5 py-4 text-left transition-all",
+                  "group flex w-full items-center gap-4 rounded-lg border px-5 py-4 text-left outline-none transition-all focus-visible:ring-2 focus-visible:ring-primary",
                   selected
-                    ? "border-primary/60 bg-surface-strong"
-                    : "border-border bg-surface/60 hover:border-primary/40",
+                    ? "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-interactive)]"
+                    : "border-border bg-surface/70 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-surface",
                 )}
               >
                 <span
                   className={cn(
                     "font-display text-xs font-extrabold tracking-[0.2em] transition-colors",
-                    selected ? "text-primary" : "text-muted-foreground",
+                    selected ? "text-primary-foreground/75" : "text-muted-foreground group-hover:text-primary",
                   )}
                 >
                   {item.number}
@@ -48,15 +48,15 @@ export function ServicesExplorer() {
 
       <div
         key={pillar.slug}
-        className="reveal reveal-in rounded-3xl border border-border bg-surface p-7 sm:p-9"
+        className="reveal reveal-in rounded-lg border border-nav/15 bg-nav p-7 text-nav-foreground shadow-[var(--shadow-elevated)] sm:p-9"
       >
         <h3 className="text-2xl font-extrabold sm:text-3xl">{pillar.title}</h3>
-        <p className="mt-4 text-sm text-muted-foreground sm:text-base">{pillar.short}</p>
+        <p className="mt-4 text-sm text-nav-muted sm:text-base">{pillar.short}</p>
         <ul className="mt-7 grid gap-2 sm:grid-cols-2">
           {pillar.items.slice(0, 8).map((item) => (
             <li key={item} className="flex items-start gap-2.5 text-sm">
               <Check className="mt-0.5 size-4 shrink-0 text-primary" />
-              <span className="min-w-0 text-muted-foreground">{item}</span>
+               <span className="min-w-0 text-nav-muted">{item}</span>
             </li>
           ))}
         </ul>
