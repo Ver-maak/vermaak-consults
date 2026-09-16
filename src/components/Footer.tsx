@@ -23,14 +23,20 @@ export function Footer() {
     <footer className="border-t border-primary/20 bg-nav text-nav-foreground">
       <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img
-            src={logoAsset.url}
-            alt="Vermaak logo"
-            width={48}
-            height={48}
-            loading="lazy"
-            className="mb-4 size-12 object-contain"
-          />
+          <Link
+            to="/"
+            aria-label="Vermaak Consults home"
+            className="group mb-4 inline-flex rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-nav"
+          >
+            <img
+              src={logoAsset.url}
+              alt="Vermaak Consults"
+              width={56}
+              height={56}
+              loading="lazy"
+              className="size-14 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
           <p className="font-display text-lg font-extrabold tracking-[0.16em] uppercase">
             Vermaak Consults
           </p>

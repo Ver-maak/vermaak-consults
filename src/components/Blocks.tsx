@@ -73,10 +73,10 @@ export function ButtonLink({
   variant?: "primary" | "ghost";
 }) {
   const className = cn(
-    "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all",
+    "group inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold outline-none transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
     variant === "primary"
-      ? "bg-[image:var(--gradient-accent)] text-primary-foreground shadow-[0_10px_30px_-14px_color-mix(in_oklab,var(--primary)_70%,transparent)] hover:scale-[1.03]"
-      : "border border-border text-foreground hover:border-primary hover:text-primary",
+      ? "bg-[image:var(--gradient-accent)] text-primary-foreground shadow-[var(--shadow-interactive)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] active:translate-y-0"
+      : "border border-border bg-surface text-foreground hover:-translate-y-0.5 hover:border-primary hover:text-primary active:translate-y-0",
   );
 
   const inner = (
@@ -116,11 +116,7 @@ export function CTASection({
 }) {
   return (
     <section className="shell py-20 md:py-28">
-      <Reveal className="relative overflow-hidden rounded-3xl border border-primary/25 bg-[image:var(--gradient-surface)] px-6 py-14 shadow-[var(--shadow-elevated)] sm:px-12 md:py-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-primary/20 blur-3xl"
-        />
+      <Reveal className="relative overflow-hidden rounded-lg border border-primary/25 bg-[image:var(--gradient-surface)] px-6 py-14 shadow-[var(--shadow-elevated)] sm:px-12 md:py-20">
         <div className="relative max-w-2xl">
           <h2 className="text-3xl font-extrabold text-balance sm:text-4xl">{title}</h2>
           <p className="mt-5 text-base text-muted-foreground sm:text-lg">{body}</p>
