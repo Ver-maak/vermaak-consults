@@ -602,3 +602,13 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deploying to Netlify
+
+This repo is pre-configured for Netlify: `netlify.toml` sets the build command and output folders, and `vite.config.ts` switches the production build to Netlify's serverless format when built outside Lovable.
+
+1. In Netlify, choose **Add new site → Import an existing project** and connect this Git repository.
+2. Netlify auto-detects the settings from `netlify.toml` (build `npm run build`, publish `.output/public`) — no changes needed.
+3. Click **Deploy**. SSR pages run as a Netlify Function and static assets are served from the CDN.
+
+Deploys from Lovable's Publish button are unaffected — Lovable hosting keeps using its own build target.
