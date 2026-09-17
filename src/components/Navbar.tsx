@@ -3,7 +3,6 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import logoAsset from "@/assets/vermaak-logo.png.asset.json";
 
 const links = [
   { to: "/about", label: "About" },
@@ -42,7 +41,7 @@ export function Navbar() {
           aria-label="Vermaak Consults home"
         >
           <img
-            src={logoAsset.url}
+            src="/favicon.png"
             alt="Vermaak logo"
             width={40}
             height={40}
